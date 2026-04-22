@@ -1,6 +1,6 @@
 # Wrestling Match Creator
 
-A C# Windows Forms application for designing and configuring professional wrestling match cards. The program is not a match simulator — it is a match setup and card-building tool where users can create wrestlers, assemble them into different types of matches, and build a complete event card.
+A C# console application for designing and configuring professional wrestling match cards. The program is not a match simulator — it is a match setup and card-building tool where users can create wrestlers, assemble them into different types of matches, and build a complete event card.
 
 - **Course:** CSC 260 — Object-Oriented Programming
 - **Instructor:** Prof. Jenkins
@@ -27,7 +27,7 @@ The project uses 9 classes that demonstrate both inheritance ("is-a") and compos
 | Wrestler | Inherits Person | Adds FinishingMove, WeightClass, ExperienceLevel |
 | Roster | Composition | Holds the full pool of Wrestler objects; enforces no duplicates |
 | Team | Composition | Holds exactly two Wrestler objects plus a TeamName |
-| Match | Abstract base class | Defines shared properties and abstract methods (Validate(), GetSummary()) |
+| Match | Abstract base class | Defines abstract methods (Validate(), GetSummary()) |
 | NormalMatch | Inherits Match | Standard 1v1 match with exactly two wrestlers |
 | TagTeamMatch | Inherits Match | 2v2 match using two Team objects |
 | TripleThreatMatch | Inherits Match | 3-way match with exactly three wrestlers |
@@ -44,36 +44,35 @@ The project uses 9 classes that demonstrate both inheritance ("is-a") and compos
 
 ### Phase 1 — Core Class Library (Linux / VS Code)
 
-Build and test all OOP classes as a console-based C# project. This phase is fully cross-platform and can be developed on Linux.
+Build and test all OOP classes as a console-based C# project.
 
-- [ ] Create Person base class
-- [ ] Create Wrestler class (inherits Person)
-- [ ] Create Roster class
-- [ ] Create Team class
-- [ ] Create abstract Match class
-- [ ] Create NormalMatch subclass
-- [ ] Create TagTeamMatch subclass
-- [ ] Create TripleThreatMatch subclass
-- [ ] Create MatchCard class
-- [ ] Build simple console test harness in Program.cs to verify all classes work
+- [x] Create Person base class
+- [x] Create Wrestler class (inherits Person)
+- [x] Create Roster class
+- [x] Create Team class
+- [x] Create abstract Match class
+- [x] Create NormalMatch subclass
+- [x] Create TagTeamMatch subclass
+- [x] Create TripleThreatMatch subclass
+- [x] Create MatchCard class
+- [x] Build simple console test harness in Program.cs to verify all classes work
 
-### Phase 2 — Windows Forms UI (Windows / Visual Studio)
+### Phase 2 — Interactive Console Menu (Linux / VS Code)
 
-Add the graphical user interface on top of the tested class library.
+Replace the test harness with a menu-driven interface that lets a user actually build and display a card.
 
-- [ ] Create Windows Forms project in Visual Studio
-- [ ] Import existing class files
-- [ ] Build Roster form (add/view wrestlers)
-- [ ] Build Create Match form (select match type and assign wrestlers)
-- [ ] Build Match Card form (view complete event lineup)
-- [ ] Wire up all UI events to existing class methods
-- [ ] Final testing and polish
+- [ ] Main menu loop (add wrestler / view roster / add match / view card / exit)
+- [ ] "Add Wrestler" flow with robust input validation (TryParse for numbers and enums)
+- [ ] "View Roster" flow listing all wrestlers in the roster
+- [ ] "Add Match" flow with match-type selection and wrestler picking from the roster
+- [ ] "View Card" flow showing the full event summary
+- [ ] *(Stretch)* JSON persistence to save/load roster and card between runs
 
 ## Tech Stack
 
 - **Language:** C#
-- **Framework:** .NET (console for Phase 1, Windows Forms for Phase 2)
-- **IDEs:** VS Code (Linux, Phase 1), Visual Studio (Windows, Phase 2)
+- **Framework:** .NET 8 (console application)
+- **IDE:** VS Code (Linux)
 - **Version Control:** Git (self-hosted)
 
 ## Version Control
@@ -82,10 +81,10 @@ This project is tracked with Git on a self-hosted Git server. Commits are made r
 
 ## Rubric Requirements Checklist
 
-- [ ] At least 4 classes in the design (this project has 9)
-- [ ] Demonstrates inheritance
-- [ ] Demonstrates encapsulation
-- [ ] Demonstrates polymorphism
-- [ ] Demonstrates abstraction
-- [ ] Uses version control with meaningful commits
-- [ ] Project statement, plan, requirements, UI mockup, and class design documented (covered in proposal)
+- [x] At least 4 classes in the design (this project has 9)
+- [x] Demonstrates inheritance
+- [x] Demonstrates encapsulation
+- [x] Demonstrates polymorphism
+- [x] Demonstrates abstraction
+- [x] Uses version control with meaningful commits
+- [x] Project statement, plan, requirements, UI mockup, and class design documented (covered in proposal)
