@@ -1,26 +1,24 @@
 ﻿using WrestlingCore;
 
-Roster roster = new Roster();
+Wrestler hogan = new Wrestler("Hulk Hogan", 70, 78, "Leg Drop",
+    WeightClass.Heavyweight, ExperienceLevel.Legend);
+Wrestler macho = new Wrestler("Macho Man", 58, 73, "Flying Elbow",
+    WeightClass.Heavyweight, ExperienceLevel.Legend);
+Wrestler rock = new Wrestler("The Rock", 51, 77, "People's Elbow",
+    WeightClass.Heavyweight, ExperienceLevel.SeasonedVet);
 
-roster.AddWrestler(new Wrestler("Hulk Hogan", 70, 78, "Leg Drop",
-    WeightClass.Heavyweight, ExperienceLevel.Legend));
+// Valid team
+Team megaPowers = new Team("The Mega Powers", hogan, macho);
+Console.WriteLine($"Team: {megaPowers.TeamName}");
+Console.WriteLine($"  - {megaPowers.Member1.Name}");
+Console.WriteLine($"  - {megaPowers.Member2.Name}");
 
-roster.AddWrestler(new Wrestler("The Rock", 51, 77, "People's Elbow",
-    WeightClass.Heavyweight, ExperienceLevel.SeasonedVet));
-
-// Try to add a duplicate (different capitalization) — should be rejected
+// Invalid team (same wrestler twice)
 try
 {
-    roster.AddWrestler(new Wrestler("hulk hogan", 65, 78, "Leg Drop 2",
-        WeightClass.Heavyweight, ExperienceLevel.Legend));
+    Team invalid = new Team("Twin Hogans", hogan, hogan);
 }
 catch (ArgumentException ex)
 {
-    Console.WriteLine($"Could not add duplicate: {ex.Message}");
-}
-
-Console.WriteLine($"\nRoster ({roster.Wrestlers.Count} wrestlers):");
-foreach (Wrestler w in roster.Wrestlers)
-{
-    Console.WriteLine($"  - {w.Name} ({w.WeightClass.ToDisplay()}, {w.ExperienceLevel.ToDisplay()})");
+    Console.WriteLine($"\nCould not create team: {ex.Message}");
 }
