@@ -17,5 +17,5 @@ roster.AddWrestler(new Wrestler("Yokozuna", 40, 72, "Banzai Drop",
 Console.WriteLine($"Roster ({roster.Wrestlers.Count} wrestlers):");
 foreach (Wrestler w in roster.Wrestlers)
 {
-    Console.WriteLine($"  - {w.Name} ({w.WeightClass}, {w.ExperienceLevel})");
+    Console.WriteLine($"  - {w.Name} ({w.WeightClass.ToDisplay()}, {w.ExperienceLevel.ToDisplay()})");
 }
