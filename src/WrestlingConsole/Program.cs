@@ -6,8 +6,13 @@ Console.Write("Age: ");
 int age = int.Parse(Console.ReadLine()!);
 Console.Write("Height (inches): ");
 int height = int.Parse(Console.ReadLine()!);
+Console.Write("Finishing Move: ");
+string finishingMove = Console.ReadLine()!;
 
-Person person = new Person(name, age, height);
-Console.WriteLine($"Name: {person.Name}");
-Console.WriteLine($"Age: {person.Age}");
-Console.WriteLine($"Height: {person.Height} inches");
+
+Wrestler wrestler = new Wrestler(name, age, height, finishingMove);
+
+Console.WriteLine($"Name: {wrestler.Name}");
+Console.WriteLine($"Age: {wrestler.Age}");
+Console.WriteLine($"Height: {wrestler.Height} inches");
+Console.WriteLine($"Finishing Move: {wrestler.FinishingMove}");

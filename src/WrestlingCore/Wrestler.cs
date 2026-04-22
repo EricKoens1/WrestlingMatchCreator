@@ -1,6 +1,12 @@
 namespace WrestlingCore;
 
-public class Wrestler
+public class Wrestler : Person
 {
-    // properties and constructors
+    public string FinishingMove { get; set; }
+
+    public Wrestler(string name, int age, int height, string finishingMove) 
+        : base(name, age, height)
+    {
+        FinishingMove = finishingMove;
+    }
 }
