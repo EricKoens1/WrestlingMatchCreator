@@ -1,0 +1,34 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Visual Studio / .NET (for when you switch to Windows)
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.userprefs
+
+# Python (in case)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Environment / secrets
+.env
+.env.local
+*.key
+
+# Build artifacts
+dist/
+build/
+*.log
