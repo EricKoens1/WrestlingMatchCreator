@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B51C16F5-2A55-46D0-A80D-A8B8C75CB054}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WrestlingCore", "src\WrestlingCore\WrestlingCore.csproj", "{C44B2EBC-2F22-43DC-8BF8-2673FDBE89E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WrestlingConsole", "src\WrestlingConsole\WrestlingConsole.csproj", "{8CF992EC-659D-4521-8108-9519360BC40A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C44B2EBC-2F22-43DC-8BF8-2673FDBE89E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C44B2EBC-2F22-43DC-8BF8-2673FDBE89E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C44B2EBC-2F22-43DC-8BF8-2673FDBE89E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C44B2EBC-2F22-43DC-8BF8-2673FDBE89E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CF992EC-659D-4521-8108-9519360BC40A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CF992EC-659D-4521-8108-9519360BC40A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CF992EC-659D-4521-8108-9519360BC40A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CF992EC-659D-4521-8108-9519360BC40A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C44B2EBC-2F22-43DC-8BF8-2673FDBE89E7} = {B51C16F5-2A55-46D0-A80D-A8B8C75CB054}
+		{8CF992EC-659D-4521-8108-9519360BC40A} = {B51C16F5-2A55-46D0-A80D-A8B8C75CB054}
+	EndGlobalSection
+EndGlobal
