@@ -1,28 +1,21 @@
 ﻿using WrestlingCore;
 
-Console.Write("Name: ");
-string name = Console.ReadLine()!;
+Roster roster = new Roster();
 
-Console.Write("Age: ");
-int age = int.Parse(Console.ReadLine()!);
+roster.AddWrestler(new Wrestler("Hulk Hogan", 70, 78, "Leg Drop",
+    WeightClass.Heavyweight, ExperienceLevel.Legend));
 
-Console.Write("Height (inches): ");
-int height = int.Parse(Console.ReadLine()!);
+roster.AddWrestler(new Wrestler("The Rock", 51, 77, "People's Elbow",
+    WeightClass.Heavyweight, ExperienceLevel.SeasonedVet));
 
-Console.Write("Finishing Move: ");
-string finishingMove = Console.ReadLine()!;
+roster.AddWrestler(new Wrestler("Rey Mysterio", 49, 66, "619",
+    WeightClass.Cruiserweight, ExperienceLevel.Legend));
 
-Console.Write("Weight Class (SuperHeavyweight, Heavyweight, LightHeavyweight, Cruiserweight): ");
-WeightClass weightClass = Enum.Parse<WeightClass>(Console.ReadLine()!, ignoreCase: true);
+roster.AddWrestler(new Wrestler("Yokozuna", 40, 72, "Banzai Drop",
+    WeightClass.SuperHeavyweight, ExperienceLevel.Veteran));
 
-Console.Write("Experience Level (Trainee, Rookie, Veteran, SeasonedVet, Legend): ");
-ExperienceLevel experienceLevel = Enum.Parse<ExperienceLevel>(Console.ReadLine()!, ignoreCase: true)!;
-
-Wrestler wrestler = new Wrestler(name, age, height, finishingMove, weightClass, experienceLevel);
-
-Console.WriteLine($"Name: {wrestler.Name}");
-Console.WriteLine($"Age: {wrestler.Age}");
-Console.WriteLine($"Height: {wrestler.Height} inches");
-Console.WriteLine($"Finishing Move: {wrestler.FinishingMove}");
-Console.WriteLine($"Weight Class: {wrestler.WeightClass}");
-Console.WriteLine($"Experience Level: {wrestler.ExperienceLevel}");
+Console.WriteLine($"Roster ({roster.Wrestlers.Count} wrestlers):");
+foreach (Wrestler w in roster.Wrestlers)
+{
+    Console.WriteLine($"  - {w.Name} ({w.WeightClass}, {w.ExperienceLevel})");
+}

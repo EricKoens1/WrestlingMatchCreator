@@ -3,7 +3,7 @@ namespace WrestlingCore;
 public enum WeightClass
 {
     SuperHeavyweight,
-    HeavyWeight,
+    Heavyweight,
     LightHeavyweight,
     Cruiserweight
 }
