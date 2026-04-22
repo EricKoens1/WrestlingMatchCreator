@@ -2,19 +2,23 @@
 
 Wrestler hogan = new Wrestler("Hulk Hogan", 70, 78, "Leg Drop",
     WeightClass.Heavyweight, ExperienceLevel.Legend);
+Wrestler macho = new Wrestler("Macho Man", 58, 73, "Flying Elbow",
+    WeightClass.Heavyweight, ExperienceLevel.Legend);
 Wrestler rock = new Wrestler("The Rock", 51, 77, "People's Elbow",
     WeightClass.Heavyweight, ExperienceLevel.SeasonedVet);
+Wrestler stoneCold = new Wrestler("Stone Cold", 61, 74, "Stunner",
+    WeightClass.Heavyweight, ExperienceLevel.Legend);
 
-// Valid 1v1
-NormalMatch main = new NormalMatch(hogan, rock);
-Console.WriteLine($"Summary: {main.GetSummary()}");
-Console.WriteLine($"Valid?   {main.Validate()}");
+Team megaPowers = new Team("The Mega Powers", hogan, macho);
+Team brothersInArms = new Team("Brothers in Arms", rock, stoneCold);
+Team overlapTeam = new Team("Overlap Team", macho, rock);  // Macho is ALSO in Mega Powers
 
-// Invalid (same wrestler twice — permitted at construction, caught by Validate)
-NormalMatch bogus = new NormalMatch(hogan, hogan);
-Console.WriteLine($"\nSummary: {bogus.GetSummary()}");
-Console.WriteLine($"Valid?   {bogus.Validate()}");
+// Valid tag match — no wrestler on both sides
+TagTeamMatch validTag = new TagTeamMatch(megaPowers, brothersInArms);
+Console.WriteLine($"Summary: {validTag.GetSummary()}");
+Console.WriteLine($"Valid?   {validTag.Validate()}");
 
-// Polymorphism preview: treat the NormalMatch as a generic Match
-Match asMatch = main;
-Console.WriteLine($"\nAs Match: {asMatch.GetSummary()}");
+// Invalid — Macho is on both teams
+TagTeamMatch overlappingTag = new TagTeamMatch(megaPowers, overlapTeam);
+Console.WriteLine($"\nSummary: {overlappingTag.GetSummary()}");
+Console.WriteLine($"Valid?   {overlappingTag.Validate()}");

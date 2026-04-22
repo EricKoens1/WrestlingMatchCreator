@@ -17,4 +17,10 @@ public class Team
         this.Member1 = member1;
         this.Member2 = member2;
     }
+
+    public bool Contains(Wrestler wrestler)
+    {
+        return string.Equals(Member1.Name, wrestler.Name, StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(Member2.Name, wrestler.Name, StringComparison.OrdinalIgnoreCase);
+    }
 }
