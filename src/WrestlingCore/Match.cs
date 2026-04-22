@@ -1,6 +1,7 @@
 namespace WrestlingCore;
 
-public class Match
+public abstract class Match
 {
-    // properties and constructors
+    public abstract bool Validate();
+    public abstract string GetSummary();
 }
