@@ -6,8 +6,15 @@ public class TripleThreatMatch : Match
     public Wrestler Wrestler2 { get; }
     public Wrestler Wrestler3 { get; }
 
-    public TripleThreatMatch(Wrestler wrestler1, Wrestler wrestler2, Wrestler wrestler3)
+    public TripleThreatMatch(string matchName, Wrestler wrestler1, Wrestler wrestler2, Wrestler wrestler3)
+        : base(matchName)
     {
+        if (string.Equals(wrestler1.Name, wrestler2.Name, StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(wrestler1.Name, wrestler3.Name, StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(wrestler2.Name, wrestler3.Name, StringComparison.OrdinalIgnoreCase))
+        {
+            throw new ArgumentException("Same wrestler cannot be used twice in the same match.");
+        }
         this.Wrestler1 = wrestler1;
         this.Wrestler2 = wrestler2;
         this.Wrestler3 = wrestler3;
@@ -15,14 +22,12 @@ public class TripleThreatMatch : Match
 
     public override bool Validate()
     {
-        return !string.Equals(Wrestler1.Name, Wrestler2.Name, StringComparison.OrdinalIgnoreCase) &&
-               !string.Equals(Wrestler1.Name, Wrestler3.Name, StringComparison.OrdinalIgnoreCase) &&
-               !string.Equals(Wrestler2.Name, Wrestler3.Name, StringComparison.OrdinalIgnoreCase);
+        return true;
     }
 
     public override string GetSummary()
     {
-        return $"Match: {Wrestler1.Name} vs. {Wrestler2.Name} vs. {Wrestler3.Name}";
+        return $"{MatchName}: {Wrestler1.Name} vs. {Wrestler2.Name} vs. {Wrestler3.Name}";
     }
 
 }
