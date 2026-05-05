@@ -42,7 +42,7 @@ The project uses 9 classes that demonstrate both inheritance ("is-a") and compos
 
 ## Development Plan
 
-### Phase 1 — Core Class Library (Linux / VS Code)
+### Core Class Library (Linux / VS Code)
 
 Build and test all OOP classes as a console-based C# project.
 
@@ -57,17 +57,6 @@ Build and test all OOP classes as a console-based C# project.
 - [x] Create MatchCard class
 - [x] Build simple console test harness in Program.cs to verify all classes work
 
-### Phase 2 — Interactive Console Menu (Linux / VS Code)
-
-Replace the test harness with a menu-driven interface that lets a user actually build and display a card.
-
-- [ ] Main menu loop (add wrestler / view roster / add match / view card / exit)
-- [ ] "Add Wrestler" flow with robust input validation (TryParse for numbers and enums)
-- [ ] "View Roster" flow listing all wrestlers in the roster
-- [ ] "Add Match" flow with match-type selection and wrestler picking from the roster
-- [ ] "View Card" flow showing the full event summary
-- [ ] *(Stretch)* JSON persistence to save/load roster and card between runs
-
 ## Tech Stack
 
 - **Language:** C#
@@ -77,7 +66,7 @@ Replace the test harness with a menu-driven interface that lets a user actually 
 
 ## Version Control
 
-This project is tracked with Git on a self-hosted Git server. Commits are made regularly as each class and feature is completed, with meaningful messages describing each change. A minimum of 5 meaningful commits will be made over the course of development (the project rubric requirement).
+This project is tracked with Git. The primary repository is hosted on a self-hosted Gitea server, and the project is also mirrored to GitHub at https://github.com/EricKoens1/WrestlingMatchCreator for instructor access. Commits are made regularly as each class and feature is completed, with meaningful messages describing each change. A minimum of 5 meaningful commits will be made over the course of development (the project rubric requirement).
 
 ## Rubric Requirements Checklist
 
